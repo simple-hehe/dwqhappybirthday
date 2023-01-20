@@ -149,7 +149,7 @@ canvas {
     }
 
     console.log(GetRequest('val').val)
-    // INITIALIZATION
+  
     const [c1, c2, c3] = document.querySelectorAll('canvas');
     const [ctx1, ctx2, ctx3] = [c1, c2, c3].map(c => c.getContext('2d'));
     let fontSize = 200;
@@ -188,11 +188,9 @@ canvas {
     ctx3.shadowColor = '#FFF';
     ctx3.shadowBlur = 25;
 
-    // ANIMATION LOOP
     (function loop() {
       ctx2.fillStyle = "rgba(0, 0, 0, .1)";
       ctx2.fillRect(0, 0, c2.width, c2.height);
-      //ctx2.clearRect(0, 0, c2.width, c2.height);
       counter += 1;
 
       if (counter % 15 === 0) {
@@ -219,8 +217,7 @@ canvas {
 
       requestAnimationFrame(loop);
     })();
-
-    // HELPER FUNCTIONS
+    
     const lerp = (a, b, t) => Math.abs(b - a) > 0.1 ? a + t * (b - a) : b;
 
     function getTarget() {
